@@ -1,0 +1,57 @@
+@prefix spi: <http://dilab77.ionio.gr/swp/spingos/vocab#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# Καθηγητης
+spi:Professor a rdfs:Class .
+# Διαλεξη 
+spi:Lecture a rdfs:Class .
+#Αιθουσα
+spi:Classroom a rdfs:Class .
+# Μαθημα 
+spi:Lesson a rdfs:Class .
+#Kathigitis ypoklasi tou Person      
+spi:Professor rdfs:subClass0f foaf:Person .
+
+spi:IsTeaching a rdf:Property ;
+          rdfs:domain spi:Lecture ;
+          rdfs:range spi:Lesson .
+
+spi:IsTeachingBy a rdf:Property ;
+          rdfs:domain spi:Lecture ;
+          rdfs:range spi:Professor .
+
+spi:IsTeachingIn a rdf:Property ;
+          rdfs:domain spi:Lecture ;
+          rdfs:range spi:Classroom .
+
+spi:Day a rdf:Property ;
+          rdfs:domain spi:Lecture ;
+          rdfs:range xsd:String .
+
+spi:StartTime a rdf:Property ;
+            rdfs:domain spi:Lecture ;
+            rdfs:range xsd:Time .
+
+spi:EndTime a rdf:Property ;
+          rdfs:domain spi:Lecture ;
+          rdfs:range xsd:Time .
+
+spi:Semester a rdf:Property ;
+             rdfs:domain spi:Lecture ;
+             rdfs:range xsd:String .
+
+
+                    
+                    
+
+
+
+
+
+
+
+
+
